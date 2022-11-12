@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.card {
+  background-color: white;
+  border-radius: 4px;
+  border: solid white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 0rem;
+  width: 18rem;
+  height: 7rem;
+}
+
+.card:hover{
+  border-color: red;
+}
+
+.card-content{
+  padding: 10px 10px;
+  display:flex; 
+  flex-direction:column;
+  align-items: flex-start;
+}
+
+.task{
+  font-weight: bold;
+  font-size: large;
+}
+
+.priority{
+  font-size: small;
+  padding: 1px 5px;
+  background-color: rgb(80, 255, 243);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.card-sub-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.assignee{
+  padding: 5px 5px;
+  background-color: rgba(80, 89, 255, 0.74);
+  border-radius: 30px;
+  color: white;
+}
+
+.due-date{
+  font-weight: 500;
+}
