@@ -1,0 +1,6 @@
+.card .ant-card-body {
+  padding: 8px 20px;
+  display: flex;
+  flex-direction: column;
+  gap:6px;
+}

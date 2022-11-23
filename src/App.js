@@ -1,9 +1,13 @@
-import Tab from './components/tab.js'
+import Kanban from "./pages/Kanban"
+import { store } from "./store/store";
+import { Provider } from "react-redux";
 
 function App() {
-  return <div>
-    <Tab task = 'Task1' assignee='Elton Zhang' priority = 'Low' due='Tuesday'/>
-  </div>;
+  return (
+    <Provider store={store}>
+      <Kanban />
+    </Provider>
+  );
 }
 
 export default App;
