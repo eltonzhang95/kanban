@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateContent } from '../store/reducer'
-import {Modal} from 'antd'
+import { Modal } from 'antd'
 
 const Kanban = () => {
 

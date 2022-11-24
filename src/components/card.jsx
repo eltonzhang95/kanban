@@ -10,11 +10,17 @@ class SingleCard extends React.Component {
   }
 
   render() {
+
     function GetInitial(props) {
+      let initial = "NA"
+      try{
+        const [fName, lName] = props.assignee.split(" ")
 
-      const [fName, lName] = props.assignee.split(" ")
-
-      const initial =  `${fName[0]}${lName[0]}`
+        initial =  `${fName[0]}${lName[0]}`
+        
+      } catch(e) {
+        
+      }
 
       return (
         <Avatar shape="circle" size={28} style={{ background: "blue" }}>
