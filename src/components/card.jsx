@@ -51,21 +51,33 @@ function SingleCard(props) {
   }
 
   const handleOk = () => {
+    dispatch(
+      updateContent(
+          columns.map((col,index)=>{
+            if(col.columnTitle === colToUpdate){
+              return {
+                columnTitle: col.columnTitle,
+                cards: col.cards.filter((task) => task.title !== taskToUpdate)
+              };
+            }
+            return col;
+          })
+      )
+    );
 
-    const newColumns = () => {
-      return columns.map((col,index)=>{
-        if(col.columnTitle === colToUpdate){
-          return {
-            columnTitle: col.columnTitle,
-            cards: col.cards.filter((task) => task.title !== taskToUpdate)
-          };
-        }
-        return col;
-      });
-    }
+    // const newColumns = () => {
+    //   return columns.map((col,index)=>{
+    //     if(col.columnTitle === colToUpdate){
+    //       return {
+    //         columnTitle: col.columnTitle,
+    //         cards: col.cards.filter((task) => task.title !== taskToUpdate)
+    //       };
+    //     }
+    //     return col;
+    //   });
+    // }
 
-
-    dispatch(updateContent(newColumns()));
+    // dispatch(updateContent(newColumns()));
     setOpen(false);
   }
 

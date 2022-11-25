@@ -14,7 +14,6 @@ export const kanbanSlice = createSlice({
             },
             updateSeletedTask: (state, action) => {
                 state.selectedTaskName = action.payload;
-                console.log(state.selectedTaskName)
             }
         }
     }
