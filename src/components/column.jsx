@@ -2,10 +2,10 @@ import SingleCard from './card.jsx'
 import React from 'react'
 import { PlusOutlined, MoreOutlined } from '@ant-design/icons'
 import { Modal } from 'antd'
-import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useState } from 'react'
 import { updateSeletedCol, updateContent } from '../store/reducer'
-import { Form } from 'antd'
+import { Form, Input } from 'antd'
 import { v4 as uuidv4 } from "uuid";
 
 function SingleColumn(props) {
@@ -67,7 +67,7 @@ function SingleColumn(props) {
         <div className='column-card-area'>
             {
                 props.cards && props.cards.map((card, i) => {
-                    return <SingleCard key={card.id} content = {card} />
+                    return <SingleCard key={card.id} content = {card} colIndex={props.colName} />
                 })
             }
         </div>
@@ -79,16 +79,16 @@ function SingleColumn(props) {
         >
             <Form className='modal-form' form={newCardForm}>
                 <Form.Item name="title" label="Task" rules={[{required: true}]}>
-                    <input style={{width: "100%"}} value=''></input>
+                    <Input style={{width: "100%"}} value=''></Input>
                 </Form.Item>
                 <Form.Item name="priority" label="Priority" rules={[{required: true}]}>
-                    <input style={{width: "100%"}} value=''></input>
+                    <Input style={{width: "100%"}} value=''></Input>
                 </Form.Item>
                 <Form.Item name="author" label="Assignee" rules={[{required: true}]}>
-                    <input style={{width: "100%"}} value=''></input>
+                    <Input style={{width: "100%"}} value=''></Input>
                 </Form.Item>
                 <Form.Item name="dueDate" label="Due Date" rules={[{required: true}]}>
-                    <input style={{width: "100%"}} value=''></input>
+                    <Input style={{width: "100%"}} value=''></Input>
                 </Form.Item>
             </Form>
         </Modal>
